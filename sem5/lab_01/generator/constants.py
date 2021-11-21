@@ -33,7 +33,7 @@ WHITE_SORTS = ["Albarino", "Aligote", "Arneis", "Asti Spumante",
 
 RED_SORTS = ["Amarone", "Banylus", "Barbaresco", "Bardolino", 
              "Barolo", "Beaujolais",  "Blanc de Noirs", "Brunello",
-             "Cabernet Franc", "Cabernet Sauvignon", "Carmenere",
+             "Cabernet Franc", "Cabernet Sauvignon", "Cahors", "Carmenere",
              "Chateauneuf-du-Pape",  "Chianti", "Claret", "Dolcetto",
              "Gamay", "Gamay Beaujolais", "Gattinara", "Gewurztraminer",
              "Kir", "Lambrusco", "Malbec", "Marc", "Marsala", 
@@ -43,6 +43,9 @@ RED_SORTS = ["Amarone", "Banylus", "Barbaresco", "Bardolino",
 
 PINK_SORTS = ["Blush", "Cava", "Champagne", "Grenache",
               "Kir", "Lambrusco", "Marc", "Rose"]
+
+VOLUMES = [0.75, 1.5, 3, 4.5, 6, 9, 12, 15, 18, 20,
+           25, 27, 30]
 
 
 # Customers

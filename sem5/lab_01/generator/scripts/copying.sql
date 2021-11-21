@@ -1,4 +1,4 @@
-COPY wines(color, sugar, sort, acidity, aging)
+COPY wines(color, sugar, sort, acidity, aging, volume)
 FROM '/home/regina/bmstu/sem5/bmstu-db/sem5/lab_01/generator/data/wines.csv' delimiter '|';
 
 

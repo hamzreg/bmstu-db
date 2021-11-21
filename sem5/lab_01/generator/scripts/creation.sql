@@ -1,42 +1,43 @@
 CREATE TABLE if not exists wines
 (
     id         SERIAL       PRIMARY KEY,
-    color      VARCHAR(5)   NOT NULL,
-    sugar      VARCHAR(10)  NOT NULL,
-    sort       VARCHAR(40)  NOT NULL,
-    acidity    FLOAT        NOT NULL,
-    aging      INTEGER      NOT NULL
+    color      VARCHAR(5),
+    sugar      VARCHAR(10),
+    sort       VARCHAR(40),
+    acidity    FLOAT,
+    aging      INTEGER,
+    volume     FLOAT
 );
 
 
 CREATE TABLE if not exists customers
 (
     id              SERIAL         PRIMARY KEY,
-    first_name      VARCHAR(100)   NOT NULL,
-    last_name       VARCHAR(100)   NOT NULL,
-    age             INTEGER        NOT NULL,
-    card            BOOLEAN        NOT NULL,
-    bonuses         INTEGER        NOT NULL
+    first_name      VARCHAR(100),
+    last_name       VARCHAR(100),
+    age             INTEGER,
+    card            BOOLEAN,
+    bonuses         INTEGER
 );
 
 
 CREATE TABLE if not exists manufactures
 (
     id           SERIAL         PRIMARY KEY,
-    name         VARCHAR(100)   NOT NULL,
-    country      VARCHAR(40)    NOT NULL,
-    experience   INTEGER        NOT NULL,
-    price        INTEGER        NOT NULL,
-    rating       INTEGER        NOT NULL
+    name         VARCHAR(100)   UNIQUE,
+    country      VARCHAR(40),
+    experience   INTEGER,
+    price        INTEGER,
+    rating       INTEGER
 );
 
 
 CREATE TABLE if not exists sales
 (
-    id              SERIAL              PRIMARY KEY,
-    wine_id         SERIAL REFERENCES   wines(id),
-    manufacture_id  SERIAL REFERENCES   manufactures(id),
-    customer_id     SERIAL REFERENCES   customers(id),
-    price           INTEGER             NOT NULL,
-    profit          INTEGER             NOT NULL
+    id              SERIAL    PRIMARY KEY,
+    wine_id         SERIAL,
+    manufacture_id  SERIAL,
+    customer_id     SERIAL,
+    price           INTEGER,
+    profit          INTEGER
 );
