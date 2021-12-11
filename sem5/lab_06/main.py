@@ -17,7 +17,7 @@ class Menu:
           "7. Вызвать хранимую процедуру\n" + \
           "8. Вызвать системную функцию\n" + \
           "9. Создать таблицу в базе данных, соответствующую тематике БД\n" + \
-          "10. Выполнить вставку данных в созданную таблицу\n" + \
+          "10. Выполнить вставку данных в созданную таблицу\n11. Вставить в таблицу поставщиков\n" + \
           "0. Выход\n" + \
           "Выбор: "
 
@@ -32,6 +32,7 @@ class Menu:
     system_func = 8
     create_table = 9
     insert_into_table = 10
+    input_to_manufactures = 11
 
 
 def process():
@@ -61,6 +62,8 @@ def process():
             database.create_table()
         elif command == Menu.insert_into_table:
             database.insert_into_table()
+        elif command == Menu.input_to_manufactures:
+            database.input_to_manufactures()
         elif command == Menu.exit:
             process = False
         else:

@@ -104,3 +104,34 @@ class dataBase:
 
     def insert_into_table(self):
         self.execute_query("insert_into_table.sql", 10)
+    
+
+    def input_to_manufactures(self):
+        try:
+            f = open("create_table.sql", "r")
+
+            creation = f.read()
+            self.__cursor.execute(creation)
+
+            print("\nВставка в таблицу поставщиков")
+
+            id = int(input("Введите id: "))
+            name = input("Введите название поставщика: ")
+            country = input("Введите страну поставщика: ")
+            experience = int(input("Введите опыт: "))
+            price = int(input("Введите цену поставки:"))
+            rating = int(input("Введите рейтинг: "))
+
+            insert = """
+                    INSERT INTO manufacturers(manufacturer) VALUES
+                    ('{"id": """ + str(id) + """, "name": \"""" + name + """\", "country": \"""" + country + """\", "experience": \"""" + str(experience) + """\", "price": \"""" + str(price) + """\", "rating": \"""" + str(rating) + """\"}');
+                    SELECT *
+                    FROM manufacturers;
+                     """
+            self.__cursor.execute(insert)
+            result = self.__cursor.fetchall()
+
+            self.print_result(result)
+
+        except Exception as error:
+            print("\nError with task:\n", error)           
